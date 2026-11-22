@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-obsidian: #0B0B0D;
+  --color-gallery: #141417;
+  --color-gallery-elevated: #1B1B20;
+  --color-ivory: #F4F0E8;
+  --color-stone: #A8A298;
+  --color-gold: #C8A96E;
+  --color-gold-hover: #D8BE8A;
+}
+
+@layer base {
+  html {
+    background-color: #0B0B0D;
+    color: #F4F0E8;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  /* Custom darkroom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0B0B0D;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #27272E;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C8A96E;
+  }
+}
+
+/* Subtle Ken Burns animation for the hero slideshow */
+@keyframes kenBurnsSlow {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.07) translate3d(-0.6%, -0.4%, 0);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenBurnsSlow 14s ease-out forwards;
+}
+
+/* Painterly canvas texture overlay for Photo-to-Painting comparison */
+.canvas-weave {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(244, 240, 232, 0.035) 0px,
+      rgba(244, 240, 232, 0.035) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(200, 169, 110, 0.03) 0px,
+      rgba(200, 169, 110, 0.03) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+}
+
+.painterly-filter {
+  filter: saturate(1.28) contrast(1.12) brightness(0.98) sepia(0.12);
+}
+
+/* Hairline border utility */
+.border-hairline {
+  border-color: rgba(244, 240, 232, 0.1);
+}
