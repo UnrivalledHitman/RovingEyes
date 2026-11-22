@@ -22,11 +22,11 @@ export function Hero({ onExploreCollections, onCommissionPainting }: HeroProps) 
   return (
     <section id="top" className="relative overflow-hidden border-b border-white/10">
       {/* Full-bleed Hero Stage — visible immediately above the fold on mobile & desktop */}
-      <div className="relative min-h-[540px] sm:min-h-[620px] lg:min-h-[700px] w-full flex items-end">
+      <div className="relative flex min-h-[540px] w-full items-end overflow-hidden sm:min-h-[620px] lg:min-h-[700px]">
         {HERO_SLIDES.map((slide, idx) => (
           <div
             key={slide.code}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
+            className={`absolute inset-0 overflow-hidden transition-opacity duration-1000 ${
               idx === activeSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'
             }`}
           >
@@ -108,7 +108,7 @@ export function Hero({ onExploreCollections, onCommissionPainting }: HeroProps) 
       </div>
 
       {/* Collector Trust Bar */}
-      <div className="bg-[#141417]">
+      <div className="relative z-10 border-t border-white/10 bg-[#141417]">
         <div className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-white/10 px-4 sm:grid-cols-2 sm:divide-y-0 sm:divide-x lg:grid-cols-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 py-4 sm:pr-5">
             <Award className="h-4 w-4 shrink-0 text-[#C8A96E]" />
